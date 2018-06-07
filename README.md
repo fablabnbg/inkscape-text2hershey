@@ -31,5 +31,6 @@ then try again. The conversion can be repeated multiple times, trying e.g. diffe
 Once the text was converted to paths with inkscape or with this extension, all the characters are kept in a group. This group has an important internal SVG Attribute `aria-label`. If you ungroup or import an SVG file from elsewhere, the attribute may be missing and inkscape-text2hershey will not work.
 
 
+## Thank You
 Thanks to EMS for bringing vector fonts to inkscape!
 
