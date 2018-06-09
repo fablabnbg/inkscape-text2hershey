@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+  <_name>Convert to Hershey 0.1</_name><!-- CAUTION: keep in sync with text2hershey.py ca. line 55 __version__ = ... -->
+  <id>com.github.fablabnbg.inkscape-text2hershey.0_1</id>
+  <dependency type="extension">org.inkscape.output.svg.inkscape</dependency>
+  <dependency type="executable" location="extensions">inkex.py</dependency>
+  <dependency type="executable" location="extensions">text2hershey.py</dependency>
+
+  <_param indent="1" name="descr" type="description" appearance="header">Convert Text to Hershey Font</_param>
+
+      <param indent="2" name="fontface" type="enum" _gui-text="Font face: ">
+        <_item value="futural">Sans 1-stroke</_item>
+        <_item value="futuram">Sans bold</_item> 
+
+        <_item value="timesr">Serif medium</_item>
+        <_item value="timesi">Serif medium italic</_item>
+        <_item value="timesib">Serif bold italic</_item>
+        <_item value="timesrb">Serif bold</_item>
+
+        <_item value="scripts">Script 1-stroke</_item>
+        <_item value="cursive">Script 1-stroke (alt)</_item>
+        <_item value="scriptc">Script medium</_item>
+
+        <_item value="gothiceng">Gothic English</_item>
+        <_item value="gothicger">Gothic German</_item>
+
+        <_item value="gothicita">Gothic Italian</_item>	   
+        
+        <!-- Block below this are loosely adapted from fonts licensed under SIL Open Font License -->
+		<_item value="EMSAllure">EMS Allure</_item>
+		<_item value="EMSBird">EMS Bird</_item>
+		<_item value="EMSBirdSwashCaps">EMS Bird Swash Caps</_item>
+		<_item value="EMSBrush">EMS Brush</_item>
+		<_item value="EMSCapitol">EMS Capitol</_item>
+		<_item value="EMSCasualHand">EMS Casual Hand</_item>
+		<_item value="EMSDecorousScript">EMS Decorous Script</_item>
+		<_item value="EMSDelight">EMS Delight</_item>
+		<_item value="EMSDelightSwashCaps">EMS Delight Swash Caps</_item>
+		<_item value="EMSElfin">EMS Elfin</_item>
+		<_item value="EMSFelix">EMS Felix</_item>
+		<_item value="EMSHerculean">EMS Herculean</_item>
+		<_item value="EMSInvite">EMS Invite</_item>
+		<_item value="EMSLeague">EMS League</_item>
+		<_item value="EMSLittlePrincess">EMS Little Princess</_item>
+		<_item value="EMSMistyNight">EMS Misty Night</_item>
+		<_item value="EMSNeato">EMS Neato</_item>
+		<_item value="EMSNixish">EMS Nixish</_item>
+		<_item value="EMSNixishItalic">EMS Nixish Italic</_item>
+		<_item value="EMSOsmotron">EMS Osmotron</_item>
+		<_item value="EMSPancakes">EMS Pancakes</_item>
+		<_item value="EMSPepita">EMS Pepita</_item>
+		<_item value="EMSQwandry">EMS Qwandry</_item>
+		<_item value="EMSReadability">EMS Readability</_item>
+		<_item value="EMSReadabilityItalic">EMS Readability Italic</_item>
+		<_item value="EMSSociety">EMS Society</_item>
+		<_item value="EMSSwiss">EMS Swiss</_item>
+        <_item value="EMSTech">EMS Tech</_item> 
+        <!-- Block above this are loosely adapted from fonts licensed under SIL Open Font License -->
+
+        <_item value="greek">Greek 1-stroke</_item>
+        <_item value="timesg">Greek medium</_item>
+        <_item value="cyrillic">Cyrillic</_item>		
+        <_item value="japanese">Japanese</_item> 
+
+        <_item value="astrology">Astrology</_item>
+        <_item value="mathlow">Math (lower)</_item>
+        <_item value="mathupp">Math (upper)</_item>
+        <_item value="markers">Markers</_item> 
+        <_item value="meteorology">Meteorology</_item>
+        <_item value="music">Music</_item>
+        <_item value="symbolic">Symbolic</_item>
+
+      </param>
+
+      <_param name="emptyspace" type="description" xml:space="preserve"> 
+</_param>
+  <_param name="scale" type="float" min="10" max="1000" precision="1" _gui-text="Fine tune character size (Default: 100 %)">100</param>
+      <_param name="emptyspace" type="description" xml:space="preserve"> 
+</_param>
+
+<_param name="usage" type="description" xml:space="preserve">
+
+Select a text line or text flow block, or any group of character glyphs that was derived from plain SVG text.
+
+This extension requires the 'Hershey-Text' extension from https://wiki.evilmadscientist.com/Hershey_Text If your inkscape is old, you may want to update your hershey fonts as described there.
+
+This extension is maintained at https://github.com/fablabnbg/inkscape-text2hershey 
+
+Whereas regular "outline" fonts (e.g., TrueType) work
+by filling in the region inside an invisible outline,
+engraving fonts are composed only of individual lines
+or strokes; much like human handwriting.
+
+Engraving fonts are used for creating text paths that
+computer controlled drawing and cutting machines (from
+pen plotters to CNC routers) can efficiently follow. 
+
+inkscape-text2hershey V0.1
+</_param>
+
+  <effect needs-live-preview="true" needs-document="true">
+    <object-type>all</object-type>
+    <effects-menu>
+      <submenu _name="Text"/>
+    </effects-menu>
+  </effect>
+    <script>
+      <command reldir="extensions" interpreter="python">text2hershey.py</command>
+    </script>
+</inkscape-extension>
