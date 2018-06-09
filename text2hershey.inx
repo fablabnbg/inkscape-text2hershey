@@ -6,7 +6,7 @@
   <dependency type="executable" location="extensions">inkex.py</dependency>
   <dependency type="executable" location="extensions">text2hershey.py</dependency>
 
-  <_param indent="1" name="descr" type="description" appearance="header">Convert Text to Hershey Font</_param>
+      <_param indent="1" name="descr" type="description" appearance="header">Convert Text to Hershey Font</_param>
 
       <param indent="2" name="fontface" type="enum" _gui-text="Font face: ">
         <_item value="futural">Sans 1-stroke</_item>
@@ -74,17 +74,18 @@
 
       <_param name="emptyspace" type="description" xml:space="preserve"> 
 </_param>
-  <_param name="scale" type="float" min="10" max="1000" precision="1" _gui-text="Fine tune character size (Default: 100 %)">100</param>
+      <_param name="scale" type="float" min="10" max="1000" precision="1" _gui-text="Fine tune character size (Default: 100 %)">100</_param>
       <_param name="emptyspace" type="description" xml:space="preserve"> 
 </_param>
 
-<_param name="usage" type="description" xml:space="preserve">
+      <_param name="usage" type="description" xml:space="preserve">
 
 Select a text line or text flow block, or any group of character glyphs that was derived from plain SVG text.
 
 This extension requires the 'Hershey-Text' extension from https://wiki.evilmadscientist.com/Hershey_Text If your inkscape is old, you may want to update your hershey fonts as described there.
 
-This extension is maintained at https://github.com/fablabnbg/inkscape-text2hershey 
+This extension is maintained at
+https://github.com/fablabnbg/inkscape-text2hershey 
 
 Whereas regular "outline" fonts (e.g., TrueType) work
 by filling in the region inside an invisible outline,
@@ -96,9 +97,9 @@ computer controlled drawing and cutting machines (from
 pen plotters to CNC routers) can efficiently follow. 
 
 inkscape-text2hershey V0.1
-</_param>
+      </_param>
 
-  <effect needs-live-preview="true" needs-document="true">
+  <effect needs-live-preview="false" needs-document="true">
     <object-type>all</object-type>
     <effects-menu>
       <submenu _name="Text"/>
