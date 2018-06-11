@@ -8,7 +8,7 @@
 
       <_param indent="1" name="descr" type="description" appearance="header">Convert Text to Hershey Font</_param>
 
-      <param indent="2" name="fontface" type="enum" _gui-text="Font face: ">
+<param xmlns="http://www.inkscape.org/namespace/inkscape/extension" indent="2" name="fontface" type="enum" _gui-text="Font face: ">
         <_item value="futural">Sans 1-stroke</_item>
         <_item value="futuram">Sans bold</_item> 
 
@@ -23,7 +23,6 @@
 
         <_item value="gothiceng">Gothic English</_item>
         <_item value="gothicger">Gothic German</_item>
-
         <_item value="gothicita">Gothic Italian</_item>	   
         
         <!-- Block below this are loosely adapted from fonts licensed under SIL Open Font License -->
