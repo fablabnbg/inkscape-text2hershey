@@ -130,8 +130,7 @@ class Text2Hershey( inkex.Effect ):
             help="The active tab when Apply was pressed" )
         self.OptionParser.add_option( "--text",
             action="store", type="string",
-            dest="text", default=
-				     y Text for Inkscape",
+            dest="text", default="Hershey Text for Inkscape",
             help="The input text to render")
         self.OptionParser.add_option( "--action",
             action="store", type="string",
