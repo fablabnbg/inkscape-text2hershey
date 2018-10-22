@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-Conver Text to Hershey - a font substitution hack to make properly layouted text using "Hershey" fonts for plotters
+Convert Text to Hershey - a font substitution hack to make properly layouted text using "Hershey" fonts for plotters
 
 Copyright 2018 Jürgen Weigert <juergen@fabmail.org>
 
@@ -30,7 +30,7 @@ import simplestyle
 try:
   import hersheydata          #data file w/ Hershey font data
 except:
-  inkex.errormsg("ERROR: hersheydata.py not found. Is the "Hershey-Text" extension missing?")
+  inkex.errormsg("ERROR: hersheydata.py not found. Is the 'Hershey-Text' extension missing?")
   sys.exit(1)
 
 
@@ -79,14 +79,14 @@ def inkscape_batch_text2path(svgfile, id):
     output = ""
     if sys_platform.startswith('win'):
 
-        ps = subprocess.Popen(r' '.join(batchcmd)), shell=True, stdout=subprocess.PIPE)
+        ps = subprocess.Popen(r' '.join(batchcmd), shell=True, stdout=subprocess.PIPE)
         output = ps.stdout.read()
         ps.stdout.close()
         ps.wait()
     else:
         # OSX sys_platform.startswith('darwin'):
         # and Linux
-        ps = subprocess.Popen(r' '.join(batchcmd)), shell=True, stdout=subprocess.PIPE)
+        ps = subprocess.Popen(r' '.join(batchcmd), shell=True, stdout=subprocess.PIPE)
         ps.wait()
         output = ps.stdout.read()
         ps.stdout.close()
@@ -118,7 +118,7 @@ def svg_text_width(char, face, offset):
     splitString = pathString.split()
     midpoint = offset - float(splitString[0])
     return midpoint + float(splitString[1]) #new offset value
-	
+
 class Text2Hershey( inkex.Effect ):
     def __init__( self ):
         inkex.Effect.__init__( self )
@@ -126,18 +126,14 @@ class Text2Hershey( inkex.Effect ):
             action="store", type="string",
             dest="tab", default="splash",
             help="The active tab when Apply was pressed" )
-        self.OptionParser.add_option( "--text",
-            action="store", type="string",
-            dest="text", default="Hershey Text for Inkscape",
-            help="The input text to render")
-        self.OptionParser.add_option( "--action",
-            action="store", type="string",
-            dest="action", default="render",
-            help="The active option when Apply was pressed" )
+        self.OptionParser.add_option( "--scale",
+            action="store", type="float",
+            dest="scaleperc", default=float(100.),
+            help="Fine tune character size in %")
         self.OptionParser.add_option( "--fontface",
             action="store", type="string",
-            dest="fontface", default="rowmans",
-            help="The selected font face when Apply was pressed" )
+            dest="fontface", default="futural",
+            help="A font face name from wiki.evilmadscientist.com/Hershey_Text" )
 
     def effect( self ):
 

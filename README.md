@@ -3,6 +3,10 @@ Convert normal text lines or flow text into hershey fonts.
 This inkscape extension is a hack. As of inkscape 0.92 the normal text tools can only work with outline fonts and not with vector fonts. The original Hershey-Text extension is very limited in its layouting capabilities. This new extension is an attempt to somewhat bridge the gap.
 
 
+## WARNING
+Code loss. The code here is incomplete.
+
+
 ## Installation
 This inkscape extension requires the 'Hershey-Text' extension from https://wiki.evilmadscientist.com/Hershey_Text
 If your inkscape is old, you may want to update your hershey fonts as described there. 
