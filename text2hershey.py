@@ -24,7 +24,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 CAUTION: keep the version numnber in sync with text2hershey.inx about page
 
 """
-import sys
+import sys, os
 import inkex
 import simplestyle
 try:
@@ -97,8 +97,6 @@ def inkscape_batch_text2path(svgfile, id):
 
     return output
 
-
-sys.exit(0)
 
 def draw_svg_text(char, face, offset, vertoffset, parent):
     style = { 'stroke': '#000000', 'fill': 'none' }
